@@ -51,7 +51,7 @@ class CharacterFragment : Fragment() {
         recyclerView = binding.RVDragon // Usa el binding para acceder al RecyclerView
         adapter = CharacterAdapter(emptyList(), requireContext()) // Ahora lo inicializas aquí
         recyclerView.adapter = adapter // Establecer el adapter aquí
-        val gridLayoutManager = GridLayoutManager(requireContext(), 3)
+        val gridLayoutManager = GridLayoutManager(requireContext(), 2)
         recyclerView.layoutManager = gridLayoutManager
     }
 
