@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.itesm.examenmoviles.R
 import com.itesm.examenmoviles.data.network.model.CharacterBase
@@ -53,14 +54,14 @@ class CharacterFragment : Fragment() {
         recyclerView = binding.RVDragon
         adapter = CharacterAdapter(emptyList(), requireContext())
         recyclerView.adapter = adapter
-        val gridLayoutManager = GridLayoutManager(requireContext(), 2)
-        recyclerView.layoutManager = gridLayoutManager
+        // Cambia el GridLayoutManager por LinearLayoutManager
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
         setupRaceSpinner()
     }
 
     private fun setupRaceSpinner() {
-        val races = listOf("Todas", "Saiyan", "Human", "Namekian", "Android", "Frieza Race", "Majin", "God", "Angel", "Unknown", "Jiren Race", "Nucleico", "Evil") // Agrega aquí todas las razas posibles
+        val races = listOf("Todas", "Saiyan", "Human", "Namekian", "Android", "Frieza Race", "Majin", "God", "Angel", "Unknown", "Jiren Race", "Nucleico", "Evil")
         val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, races)
         binding.spinnerRaza.adapter = adapter
         binding.spinnerRaza.setSelection(0) // Predeterminado en "Todas"

@@ -15,6 +15,9 @@ class CharacterViewHolder(private val binding: ItemCharacterBinding) : RecyclerV
         binding.TVRace.text = character.race // Raza
         binding.TVKi.text = character.ki.toString() // Ki
         binding.TVMaxKi.text = character.max_ki.toString() // Max Ki
+        binding.TVGender.text = character.gender.toString()
+        binding.TVAffiliation.text = character.affiliation.toString()
+        binding.TVDescription.text = character.description.toString()
 
         // Cargar la imagen usando Glide (o cualquier otra librería de tu elección)
         Glide.with(context)
