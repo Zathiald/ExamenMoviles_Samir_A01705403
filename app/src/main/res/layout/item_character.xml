@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         card_view:cardCornerRadius="8dp"
-        card_view:cardBackgroundColor="@color/black">
+        card_view:cardBackgroundColor="@color/black"> <!-- Fondo de la tarjeta -->
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -31,7 +31,7 @@
                 android:id="@+id/TVName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="12sp"
+                android:textSize="14sp"
                 android:textColor="@color/white"
                 android:gravity="center"
                 android:layout_marginTop="16dp"
@@ -44,9 +44,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="12sp"
-                android:textColor="@color/white"
+                android:textColor="@color/vegeta_blue"
                 android:gravity="center"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
                 android:text="Race"
                 android:textAllCaps="true" />
@@ -56,9 +56,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="12sp"
-                android:textColor="@color/white"
+                android:textColor="@color/krillin_yellow"
                 android:gravity="center"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
                 android:text="Ki"
                 android:textAllCaps="true" />
@@ -68,9 +68,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="12sp"
-                android:textColor="@color/white"
+                android:textColor="@color/piccolo_green"
                 android:gravity="center"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
                 android:text="Max Ki"
                 android:textAllCaps="true" />
