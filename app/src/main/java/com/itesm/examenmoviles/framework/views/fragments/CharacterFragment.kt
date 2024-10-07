@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
@@ -21,7 +23,8 @@ class CharacterFragment : Fragment() {
     private lateinit var viewModel: CharacterViewModel
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: CharacterAdapter
-    private lateinit var data: ArrayList<CharacterBase>
+    private var data: List<CharacterBase> = emptyList()
+    private var filteredData: List<CharacterBase> = emptyList()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -33,9 +36,8 @@ class CharacterFragment : Fragment() {
 
         // Inicializar el ViewModel
         viewModel = ViewModelProvider(this)[CharacterViewModel::class.java]
-        data = ArrayList()
 
-        initializeComponents() // No es necesario pasar root
+        initializeComponents()
         initializeObservers()
         viewModel.getDragonList()
 
@@ -48,17 +50,35 @@ class CharacterFragment : Fragment() {
     }
 
     private fun initializeComponents() {
-        recyclerView = binding.RVDragon // Usa el binding para acceder al RecyclerView
-        adapter = CharacterAdapter(emptyList(), requireContext()) // Ahora lo inicializas aquí
-        recyclerView.adapter = adapter // Establecer el adapter aquí
+        recyclerView = binding.RVDragon
+        adapter = CharacterAdapter(emptyList(), requireContext())
+        recyclerView.adapter = adapter
         val gridLayoutManager = GridLayoutManager(requireContext(), 2)
         recyclerView.layoutManager = gridLayoutManager
+
+        setupRaceSpinner()
+    }
+
+    private fun setupRaceSpinner() {
+        val races = listOf("Todas", "Saiyan", "Human", "Namekian", "Android", "Frieza Race", "Majin", "God", "Angel", "Unknown", "Jiren Race", "Nucleico", "Evil") // Agrega aquí todas las razas posibles
+        val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, races)
+        binding.spinnerRaza.adapter = adapter
+        binding.spinnerRaza.setSelection(0) // Predeterminado en "Todas"
+
+        binding.spinnerRaza.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
+                filterCharacters(races[position])
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>) {}
+        }
     }
 
     private fun initializeObservers() {
         viewModel.dragonObjectLiveData.observe(viewLifecycleOwner) { characterObject ->
             if (characterObject != null) {
-                setUpRecyclerView(characterObject.items)
+                data = characterObject.items // Almacena los datos originales
+                setUpRecyclerView(data)
             }
         }
     }
@@ -66,5 +86,13 @@ class CharacterFragment : Fragment() {
     private fun setUpRecyclerView(dataForList: List<CharacterBase>) {
         adapter.updateCharacters(dataForList) // Actualiza los datos en el adapter
     }
-}
 
+    private fun filterCharacters(selectedRace: String) {
+        filteredData = if (selectedRace == "Todas") {
+            data // Muestra todos los personajes
+        } else {
+            data.filter { it.race == selectedRace } // Filtra por raza seleccionada
+        }
+        setUpRecyclerView(filteredData) // Actualiza el RecyclerView con los personajes filtrados
+    }
+}
