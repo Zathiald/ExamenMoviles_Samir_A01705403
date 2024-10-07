@@ -13,6 +13,6 @@ interface DragonApiService {
     ): CharacterObject
 
     @GET("characters/{id}")
-    suspend fun getCharacterById(@Path("id") id: Int): DragonBallCharacter
+    suspend fun getCharacterById(@Path("id") id: Int): CharacterBase
 }
 
