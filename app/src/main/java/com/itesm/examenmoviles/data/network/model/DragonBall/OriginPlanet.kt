@@ -1,10 +1,12 @@
 package com.itesm.examenmoviles.data.network.model.DragonBall
 
+import com.google.gson.annotations.SerializedName
+
 data class OriginPlanet(
-    val deletedAt: Any,
-    val description: String,
-    val id: Int,
-    val image: String,
-    val isDestroyed: Boolean,
-    val name: String
+    @SerializedName("id") val id: Int,
+    @SerializedName("name") val name: String,
+    @SerializedName("isDestroyed") val isDestroyed: Boolean,
+    @SerializedName("description") val description: String,
+    @SerializedName("image") val image: String,
+    @SerializedName("deletedAt") val deletedAt: Any?  // Permitir null
 )

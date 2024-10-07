@@ -1,5 +1,6 @@
 package com.itesm.examenmoviles.data
 
+import com.itesm.examenmoviles.data.network.model.CharacterBase
 import com.itesm.examenmoviles.data.network.model.CharacterObject
 import com.itesm.examenmoviles.data.network.model.DragonApiClient
 import com.itesm.examenmoviles.data.network.model.DragonBall.CharacterList
@@ -13,7 +14,7 @@ class DragonRepository() {
         return apiCharacter.getDragonList(limit)
     }
 
-    suspend fun getCharacterById(id: Int): DragonBallCharacter? {
+    suspend fun getCharacterById(id: Int): CharacterBase? {
         return apiCharacter.getCharacterById(id)
     }
 }
