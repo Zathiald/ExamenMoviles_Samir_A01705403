@@ -11,12 +11,12 @@ class CharacterViewHolder(private val binding: ItemCharacterBinding) : RecyclerV
 
     fun bind(character: CharacterBase, context: Context) {
         // Asigna los valores de los atributos del personaje a los TextViews correspondientes
-        binding.TVName.text = character.name // Nombre
-        binding.TVRace.text = character.race // Raza
-        binding.TVKi.text = character.ki.toString() // Ki
-        binding.TVMaxKi.text = character.max_ki.toString() // Max Ki
-        binding.TVGender.text = character.gender.toString()
-        binding.TVAffiliation.text = character.affiliation.toString()
+        binding.TVName.text = "Name: " + character.name // Nombre
+        binding.TVRace.text = "Race: " + character.race // Raza
+        binding.TVKi.text = "Ki: " + character.ki.toString() // Ki
+        binding.TVMaxKi.text = "Max Ki: " + character.max_ki.toString() // Max Ki
+        binding.TVGender.text = "Gender: " + character.gender.toString()
+        binding.TVAffiliation.text = "Affiliation: " + character.affiliation.toString()
         binding.TVDescription.text = character.description.toString()
 
         // Cargar la imagen usando Glide (o cualquier otra librería de tu elección)

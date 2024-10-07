@@ -61,7 +61,7 @@ class CharacterFragment : Fragment() {
     }
 
     private fun setupRaceSpinner() {
-        val races = listOf("Todas", "Saiyan", "Human", "Namekian", "Android", "Frieza Race", "Majin", "God", "Angel", "Unknown", "Jiren Race", "Nucleico", "Evil")
+        val races = listOf("All", "Saiyan", "Human", "Namekian", "Android", "Frieza Race", "Majin", "God", "Angel", "Unknown", "Jiren Race", "Nucleico", "Evil")
         val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, races)
         binding.spinnerRaza.adapter = adapter
         binding.spinnerRaza.setSelection(0) // Predeterminado en "Todas"
