@@ -1,5 +1,6 @@
 package com.itesm.examenmoviles.utils
 
 object Constants {
-    const val BASE_URL = "https://pokeapi.co/api/v2/"
+    const val BASE_URL = "https://dragonball-api.com/api/"
+    const val MAX_DRAGON_NUMBER = 1279
 }

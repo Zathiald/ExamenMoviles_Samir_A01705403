@@ -8,7 +8,5 @@ class DragonInfoRequirement {
     // Instancia del repositorio que gestiona la API y los datos
     private val repository = DragonRepository()
 
-    suspend operator fun invoke(id: Int): DragonBallCharacter? {
-        return repository.getCharacterById(id)
-    }
+    suspend operator fun invoke(id: Int): DragonBallCharacter? = repository.getCharacterById(id)
 }
