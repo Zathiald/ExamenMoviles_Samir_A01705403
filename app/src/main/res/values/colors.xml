@@ -2,4 +2,9 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="goku_orange">#FFEC7A00</color> <!-- Naranja de Goku -->
+    <color name="vegeta_blue">#FF005D99</color> <!-- Azul de Vegeta -->
+    <color name="krillin_yellow">#FFFAE03A</color> <!-- Amarillo de Krillin -->
+    <color name="piccolo_green">#FF4CAF50</color> <!-- Verde de Piccolo -->
+    <color name="dragonball_bg">#FFFAFAFA</color> <!-- Fondo suave -->
 </resources>

@@ -33,6 +33,10 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
@@ -42,7 +46,44 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.recyclerview)
+    implementation(libs.androidx.navigation.fragment)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    implementation (libs.okhttp)
+
+    // Retrofit libraries
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+    implementation(libs.kotlinx.coroutines.core)
+    implementation(libs.kotlinx.coroutines.android)
+
+    // Coroutines
+    implementation (libs.kotlinx.coroutines.android.v152)
+
+    // ViewModel & LiveData
+    implementation (libs.androidx.lifecycle.viewmodel.ktx)
+    implementation (libs.androidx.lifecycle.livedata.ktx)
+
+    //RecyclerView
+    implementation (libs.recyclerview.v121)
+
+    //Glide
+    implementation (libs.glide)
+    annotationProcessor (libs.compiler)
+    implementation (libs.glide.transformations)
+
+    //Fragment
+    implementation (libs.androidx.fragment.ktx)
+
+    //Activity
+    implementation (libs.androidx.activity.ktx)
+
+    //Data binding
+    implementation (libs.androidx.databinding.runtime)
+
+    // ViewModel
+    implementation (libs.androidx.lifecycle.viewmodel.ktx.v231)
+
 }
