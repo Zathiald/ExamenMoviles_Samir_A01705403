@@ -23,5 +23,17 @@ class CharacterViewHolder(private val binding: ItemCharacterBinding) : RecyclerV
         Glide.with(context)
             .load(character.image) // Suponiendo que `imageUrl` es la URL de la imagen
             .into(binding.IVPhoto)
+
+        val originPlanet = character.originPlanet
+        if (originPlanet != null) {
+            binding.TVOriginPlanet.text = "Planet: " + originPlanet.name
+        } // Nombre del planeta
+
+        // Cargar la imagen del planeta usando Glide
+        if (originPlanet != null) {
+            Glide.with(context)
+                .load(originPlanet.image)
+                .into(binding.IVPlanet)
+        }
     }
 }

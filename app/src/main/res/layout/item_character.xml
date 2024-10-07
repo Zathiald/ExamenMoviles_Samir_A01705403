@@ -120,6 +120,31 @@
                     android:textAllCaps="true" />
 
             </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/IVPlanet"
+                    android:layout_width="88dp"
+                    android:layout_height="88dp"
+                    android:src="@mipmap/ic_launcher" /> <!-- Cambia la fuente de la imagen del planeta aquí -->
+
+                <TextView
+                    android:id="@+id/TVOriginPlanet"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:textColor="@color/white"
+                    android:layout_marginBottom="8dp"
+                    android:text="Origin Planet"
+                    android:textAllCaps="true" />
+            </LinearLayout>
+
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>

@@ -14,6 +14,6 @@ data class CharacterBase(
     @SerializedName("description") val description: String,
     @SerializedName("image") val image: String,
     @SerializedName("affiliation") val affiliation: String,
-    @SerializedName("originPlanet") val originPlanet: OriginPlanet,
+    @SerializedName("originPlanet") val originPlanet: OriginPlanet?,
     @SerializedName("transformations") val transformations: List<Transformation>
 )

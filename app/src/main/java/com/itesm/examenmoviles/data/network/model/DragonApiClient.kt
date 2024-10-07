@@ -16,7 +16,7 @@ class DragonApiClient {
         }
     }
 
-    suspend fun getCharacterById(id: Int): DragonBallCharacter? {
+    suspend fun getCharacterById(id: Int): CharacterBase? {
         api = NetworkModuleDI()
         return try {
             api.getCharacterById(id)
